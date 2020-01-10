@@ -16,7 +16,7 @@ detect-asm = []
 
 [dependencies]
 byteorder = "1"
-bytes = "0.4.12"
+bytes = "0.5"
 goblin = "0.0.24"
 ckb-vm-definitions = { path = "definitions", version = "0.18.1" }
 derive_more = "0.15.0"
