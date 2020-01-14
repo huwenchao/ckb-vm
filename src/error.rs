@@ -1,7 +1,7 @@
 use std::error::Error as StdError;
 use std::io::{Error as IOError, ErrorKind};
 
-#[derive(Debug, PartialEq, Clone, Copy, Eq, Display)]
+#[derive(Debug, PartialEq, Clone, Eq, Display)]
 pub enum Error {
     #[display(fmt = "parse error")]
     ParseError,
@@ -15,6 +15,8 @@ pub enum Error {
     InvalidInstruction(u32),
     #[display(fmt = "invalid syscall {}", "_0")]
     InvalidEcall(u64),
+    #[display(fmt = "syscall {} err: {}", "_0", "_1")]
+    EcallError(u64, String),
     #[display(fmt = "invalid elf")]
     InvalidElfBits,
     #[display(fmt = "invalid operand {}", "_0")]
